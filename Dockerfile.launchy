@@ -1,0 +1,21 @@
+# Stage 1: compilar assets frontend modificados
+FROM node:20-alpine AS frontend-builder
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+COPY app/javascript ./app/javascript
+COPY tailwind.config.js ./
+COPY config/webpack ./config/webpack
+RUN yarn build
+
+# Stage 2: imagem final baseada na oficial do Chatwoot
+# Esta estrategia evita compilar Ruby/Rails do zero (economia de ~15min)
+FROM chatwoot/chatwoot:v4.14.0
+COPY --from=frontend-builder /app/public/packs ./public/packs
+COPY --from=frontend-builder /app/public/assets ./public/assets
+COPY config/locales ./config/locales
+COPY app/views ./app/views
+COPY public/favicon.ico ./public/favicon.ico
+COPY public/apple-touch-icon.png ./public/apple-touch-icon.png
+LABEL maintainer="Launchy <tech@launchy.com.br>"
+LABEL version="v4.14.0-launchy"
