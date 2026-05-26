@@ -1,6 +1,38 @@
 // scss-lint:disable PropertySortOrder
 @layer base {
   // NEXT COLORS START
+
+  // ============================================================
+  // LAUNCHY DESIGN TOKENS
+  // ============================================================
+  :root {
+    --color-bg-primary: #0d0d0d;
+    --color-bg-secondary: #070d1a;
+    --color-bg-surface: #0a1628;
+    --color-accent: #b5ff2c;
+    --color-text-primary: #ffffff;
+    --color-text-on-accent: #000000;
+    --color-woot-400: #b5ff2c;
+    --color-woot-500: #b5ff2c;
+    --color-woot-600: #9de020;
+    --color-background: #0d0d0d;
+    --color-background-dark: #070d1a;
+  }
+
+  [data-theme='dark'],
+  .dark {
+    --color-background: #0d0d0d;
+    --color-background-light: #0a1628;
+    --color-background-dark: #070d1a;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-heading: #ffffff;
+    --color-body: rgba(255, 255, 255, 0.72);
+    --s-button-primary-bg: #b5ff2c;
+    --s-button-primary-text: #000000;
+    --s-button-primary-hover: #9de020;
+  }
+  // ============================================================
+
   :root {
     // slate
     --slate-1: 252 252 253;

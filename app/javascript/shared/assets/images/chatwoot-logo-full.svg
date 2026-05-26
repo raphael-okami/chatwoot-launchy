@@ -9,7 +9,7 @@
   <rect x="0"  y="21" width="8" height="2" rx="1" fill="#B5FF2C" opacity="0.35"/>
   <rect x="1"  y="25" width="6" height="2" rx="1" fill="#B5FF2C" opacity="0.2"/>
 
-  <!-- Wordmark: LAUNCHY in dark color for light mode -->
+  <!-- Wordmark: LAUNCHY in dark color -->
   <text
     x="44"
     y="34"

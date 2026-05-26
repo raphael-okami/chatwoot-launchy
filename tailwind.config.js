@@ -42,6 +42,12 @@ const tailwindConfig = {
         sans: defaultSansFonts,
         inter: ['Inter', ...defaultSansFonts],
         interDisplay: ['InterDisplay', ...defaultSansFonts],
+        heading: ['"Bebas Neue"', 'sans-serif'],
+      },
+      colors: {
+        'launchy-accent': '#b5ff2c',
+        'launchy-bg': '#0d0d0d',
+        'launchy-surface': '#0a1628',
       },
       fontWeight: {
         420: '420',

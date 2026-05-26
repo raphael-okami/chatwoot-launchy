@@ -1,0 +1,53 @@
+// ============================================================
+// LAUNCHY TYPOGRAPHY
+// Import Bebas Neue (headings) + Inter (body) from Google Fonts
+// ============================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+// Headings — Bebas Neue
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.page-title,
+.sidebar-title,
+.conv-header--title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 0.05em;
+}
+
+// Body — Inter
+body,
+p,
+span,
+input,
+textarea,
+select,
+button {
+  font-family:
+    'Inter',
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Tahoma,
+    Arial,
+    sans-serif;
+}
+
+// Alternativa offline:
+// Se o CSP bloquear fonts.googleapis.com, substituir o @import acima por
+// @font-face apontando para arquivos .woff2 em public/fonts/launchy/
+// Exemplo:
+// @font-face {
+//   font-family: 'Bebas Neue';
+//   src: url('/fonts/launchy/bebas-neue-regular.woff2') format('woff2');
+//   font-weight: 400;
+//   font-display: swap;
+// }

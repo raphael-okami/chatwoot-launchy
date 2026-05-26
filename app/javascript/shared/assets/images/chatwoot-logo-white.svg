@@ -9,7 +9,7 @@
   <rect x="0"  y="21" width="8" height="2" rx="1" fill="#B5FF2C" opacity="0.35"/>
   <rect x="1"  y="25" width="6" height="2" rx="1" fill="#B5FF2C" opacity="0.2"/>
 
-  <!-- Wordmark: LAUNCHY in dark color for light mode -->
+  <!-- Wordmark: LAUNCHY in white for dark backgrounds -->
   <text
     x="44"
     y="34"
@@ -17,7 +17,7 @@
     font-weight="700"
     font-size="22"
     letter-spacing="-0.5"
-    fill="#0D0D0D"
+    fill="#FFFFFF"
   >LAUNCHY</text>
   <!-- Accent square -->
   <rect x="222" y="24" width="8" height="8" fill="#B5FF2C"/>
