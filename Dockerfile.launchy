@@ -23,8 +23,10 @@ COPY app/javascript/design-system/images/logo-thumbnail.svg app/javascript/desig
 COPY app/javascript/widget/assets/images/logo.svg app/javascript/widget/assets/images/logo.svg
 
 # Recompilar assets com as modificações do DS
+# SECRET_KEY_BASE dummy é necessário apenas durante o build (prática padrão Rails)
 ENV RAILS_ENV=production
 ENV NODE_ENV=production
+ENV SECRET_KEY_BASE=dummysecretforbuildonlynotusedatruntime
 RUN bundle exec rake assets:precompile
 
 LABEL maintainer="Launchy <tech@launchy.com.br>"
