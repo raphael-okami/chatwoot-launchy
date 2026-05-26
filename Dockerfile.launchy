@@ -1,21 +1,31 @@
-# Stage 1: compilar assets frontend modificados
-FROM node:20-alpine AS frontend-builder
-WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
-COPY app/javascript ./app/javascript
-COPY tailwind.config.js ./
-COPY config/webpack ./config/webpack
-RUN yarn build
+# Imagem customizada da Launchy baseada no Chatwoot oficial
+# Copia apenas os arquivos modificados pelo DS Launchy e recompila os assets
 
-# Stage 2: imagem final baseada na oficial do Chatwoot
-# Esta estrategia evita compilar Ruby/Rails do zero (economia de ~15min)
-FROM chatwoot/chatwoot:v4.14.0
-COPY --from=frontend-builder /app/public/packs ./public/packs
-COPY --from=frontend-builder /app/public/assets ./public/assets
-COPY config/locales ./config/locales
-COPY app/views ./app/views
-COPY public/favicon.ico ./public/favicon.ico
-COPY public/apple-touch-icon.png ./public/apple-touch-icon.png
+FROM chatwoot/chatwoot:v4.14.0 AS base
+
+# Copiar arquivos modificados do DS Launchy
+COPY app/javascript/dashboard/assets/scss/_next-colors.scss app/javascript/dashboard/assets/scss/_next-colors.scss
+COPY app/javascript/dashboard/assets/scss/_fonts.scss app/javascript/dashboard/assets/scss/_fonts.scss
+COPY app/javascript/dashboard/assets/scss/_woot.scss app/javascript/dashboard/assets/scss/_woot.scss
+COPY tailwind.config.js tailwind.config.js
+COPY config/installation_config.yml config/installation_config.yml
+COPY config/locales/en.yml config/locales/en.yml
+COPY config/locales/pt_BR.yml config/locales/pt_BR.yml
+COPY app/views/devise/mailer/confirmation_instructions.html.erb app/views/devise/mailer/confirmation_instructions.html.erb
+COPY app/views/super_admin/devise/sessions/new.html.erb app/views/super_admin/devise/sessions/new.html.erb
+COPY public/brand-assets/ public/brand-assets/
+COPY public/favicon.ico public/favicon.ico
+COPY public/apple-touch-icon.png public/apple-touch-icon.png
+COPY app/javascript/shared/assets/images/chatwoot-logo.svg app/javascript/shared/assets/images/chatwoot-logo.svg
+COPY app/javascript/shared/assets/images/chatwoot-logo-white.svg app/javascript/shared/assets/images/chatwoot-logo-white.svg
+COPY app/javascript/shared/assets/images/chatwoot-logo-full.svg app/javascript/shared/assets/images/chatwoot-logo-full.svg
+COPY app/javascript/design-system/images/logo-thumbnail.svg app/javascript/design-system/images/logo-thumbnail.svg
+COPY app/javascript/widget/assets/images/logo.svg app/javascript/widget/assets/images/logo.svg
+
+# Recompilar assets com as modificações do DS
+ENV RAILS_ENV=production
+ENV NODE_ENV=production
+RUN bundle exec rake assets:precompile
+
 LABEL maintainer="Launchy <tech@launchy.com.br>"
 LABEL version="v4.14.0-launchy"
