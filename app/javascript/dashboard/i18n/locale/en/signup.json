@@ -1,57 +1,57 @@
 {
   "REGISTER": {
-    "TRY_WOOT": "Create an account",
-    "GET_STARTED": "Get started with Chatwoot",
-    "TITLE": "Register",
-    "TESTIMONIAL_HEADER": "All it takes is one step to move forward",
-    "TESTIMONIAL_CONTENT": "You're one step away from engaging your customers, retaining them and finding new ones.",
-    "TERMS_ACCEPT": "By creating an account, you agree to our <a href=\"https://www.chatwoot.com/terms\">T & C</a> and <a href=\"https://www.chatwoot.com/privacy-policy\">Privacy policy</a>",
+    "TRY_WOOT": "Criar conta",
+    "GET_STARTED": "Comece a usar o Launchy",
+    "TITLE": "Cadastro",
+    "TESTIMONIAL_HEADER": "Tudo começa com um passo",
+    "TESTIMONIAL_CONTENT": "Em menos de 24h você já tem um site profissional funcionando. Sem agência, sem enrolação.",
+    "TERMS_ACCEPT": "Ao criar sua conta, você concorda com nossos <a href=\"https://launchy.com.br/termos\">Termos</a> e <a href=\"https://launchy.com.br/privacidade\">Política de Privacidade</a>",
     "OAUTH": {
-      "GOOGLE_SIGNUP": "Sign up with Google"
+      "GOOGLE_SIGNUP": "Entrar com Google"
     },
     "COMPANY_NAME": {
-      "LABEL": "Company name",
-      "PLACEHOLDER": "Enter your company name. E.g., Wayne Enterprises",
-      "ERROR": "Company name is too short."
+      "LABEL": "Nome do negócio",
+      "PLACEHOLDER": "Ex: Clínica Sorriso, Studio Silva",
+      "ERROR": "Nome do negócio muito curto."
     },
     "FULL_NAME": {
-      "LABEL": "Full name",
-      "PLACEHOLDER": "Enter your full name. E.g., Bruce Wayne",
-      "ERROR": "Full name is too short."
+      "LABEL": "Seu nome completo",
+      "PLACEHOLDER": "Ex: Rafael Souza",
+      "ERROR": "Nome muito curto."
     },
     "EMAIL": {
-      "LABEL": "Work email",
-      "PLACEHOLDER": "Enter your work email address. E.g., bruce{'@'}wayne{'.'}enterprises",
-      "ERROR": "Please enter a valid work email address."
+      "LABEL": "E-mail profissional",
+      "PLACEHOLDER": "Ex: rafael@clinicasorriso.com.br",
+      "ERROR": "Por favor, informe um e-mail válido."
     },
     "PASSWORD": {
-      "LABEL": "Password",
-      "PLACEHOLDER": "Password",
-      "ERROR": "Password is too short.",
-      "IS_INVALID_PASSWORD": "Password should contain atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
-      "REQUIREMENTS_LENGTH": "At least 6 characters long",
-      "REQUIREMENTS_UPPERCASE": "At least one uppercase letter",
-      "REQUIREMENTS_LOWERCASE": "At least one lowercase letter",
-      "REQUIREMENTS_NUMBER": "At least one number",
-      "REQUIREMENTS_SPECIAL": "At least one special character"
+      "LABEL": "Senha",
+      "PLACEHOLDER": "Sua senha de acesso",
+      "ERROR": "Senha muito curta.",
+      "IS_INVALID_PASSWORD": "A senha deve ter pelo menos 1 letra maiúscula, 1 minúscula, 1 número e 1 caractere especial.",
+      "REQUIREMENTS_LENGTH": "Mínimo 6 caracteres",
+      "REQUIREMENTS_UPPERCASE": "Pelo menos uma letra maiúscula",
+      "REQUIREMENTS_LOWERCASE": "Pelo menos uma letra minúscula",
+      "REQUIREMENTS_NUMBER": "Pelo menos um número",
+      "REQUIREMENTS_SPECIAL": "Pelo menos um caractere especial"
     },
     "CONFIRM_PASSWORD": {
-      "LABEL": "Confirm password",
-      "PLACEHOLDER": "Confirm password",
-      "ERROR": "Passwords do not match."
+      "LABEL": "Confirmar senha",
+      "PLACEHOLDER": "Repita a senha",
+      "ERROR": "As senhas não coincidem."
     },
     "API": {
-      "SUCCESS_MESSAGE": "Registration Successful",
-      "ERROR_MESSAGE": "Could not connect to Woot server. Please try again."
+      "SUCCESS_MESSAGE": "Conta criada com sucesso",
+      "ERROR_MESSAGE": "Não foi possível conectar ao servidor. Tente novamente."
     },
-    "SUBMIT": "Create account",
-    "HAVE_AN_ACCOUNT": "Already have an account?",
+    "SUBMIT": "Criar conta",
+    "HAVE_AN_ACCOUNT": "Já tem uma conta?",
     "VERIFY_EMAIL": {
-      "TITLE": "Check your inbox",
-      "DESCRIPTION": "We sent a verification link to {email}. Click the link to verify your email and get started.",
-      "RESEND": "Resend verification email",
-      "RESEND_SUCCESS": "Verification email sent. Please check your inbox.",
-      "RESEND_ERROR": "Could not send verification email. Please try again."
+      "TITLE": "Verifique seu e-mail",
+      "DESCRIPTION": "Enviamos um link de verificação para {email}. Clique no link para confirmar e começar.",
+      "RESEND": "Reenviar e-mail de verificação",
+      "RESEND_SUCCESS": "E-mail de verificação enviado. Verifique sua caixa de entrada.",
+      "RESEND_ERROR": "Não foi possível enviar o e-mail. Tente novamente."
     }
   }
 }

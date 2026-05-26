@@ -1,30 +1,35 @@
-/* Launchy Design System — Theme Override para Chatwoot v4.14.0 */
+/* ================================================================
+   Launchy Design System — Theme Override para Chatwoot v4.14.0
+   Tokens: bg-base #070D1A | surface #0A1628 | accent #B5FF2C
+   Fontes: Bebas Neue (headings) | Montserrat (body)
+   ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* ============================================================
-   FORCE DARK MODE
-   ============================================================ */
+/* ================================================================
+   RESET: FORÇA DARK MODE EM TODO NÍVEL
+   ================================================================ */
 html, body {
   color-scheme: dark !important;
+  font-family: 'Montserrat', system-ui, sans-serif !important;
 }
 
-/* ============================================================
-   TOKENS DO DS LAUNCHY
-   ============================================================ */
+/* ================================================================
+   CSS TOKENS — OVERRIDE COMPLETO DO CHATWOOT
+   ================================================================ */
 :root,
 [data-theme="light"],
 [data-theme="dark"],
 .dark,
 html {
-  /* Backgrounds */
-  --color-bg: #0D0D0D !important;
-  --color-background: #0D0D0D !important;
-  --w-surface-1: #0D0D0D !important;
-  --w-surface-2: #0A1628 !important;
-  --w-surface-3: #070D1A !important;
+  /* DS Launchy backgrounds */
+  --color-bg:           #070D1A !important;
+  --color-background:   #070D1A !important;
+  --w-surface-1:        #070D1A !important;
+  --w-surface-2:        #0A1628 !important;
+  --w-surface-3:        #0F1E36 !important;
 
-  /* Brand / Accent — #B5FF2C */
+  /* Chatwoot woot-* palette → mapeia para #B5FF2C */
   --color-woot-25:  #f0ffe0 !important;
   --color-woot-50:  #e5ffb3 !important;
   --color-woot-100: #d4ff80 !important;
@@ -38,20 +43,20 @@ html {
   --color-woot-900: #4A6B00 !important;
 
   /* Texto */
-  --color-heading: #FFFFFF !important;
-  --color-body: #FFFFFF !important;
-  --color-body-1: #FFFFFF !important;
-  --color-body-2: #CCCCCC !important;
-  --color-body-3: #999999 !important;
+  --color-heading:  #FFFFFF !important;
+  --color-body:     #FFFFFF !important;
+  --color-body-1:   #FFFFFF !important;
+  --color-body-2:   #CCCCCC !important;
+  --color-body-3:   rgba(255,255,255,0.45) !important;
 
   /* Borders */
-  --color-border: #1A2A3A !important;
+  --color-border:       #1A2A3A !important;
   --color-border-light: #0F1E2E !important;
 
-  /* Sidebar */
-  --s-25: #0D0D0D !important;
-  --s-50: #0A1628 !important;
-  --s-75: #0F1E30 !important;
+  /* Sidebar palette */
+  --s-25:  #070D1A !important;
+  --s-50:  #0A1628 !important;
+  --s-75:  #0F1E30 !important;
   --s-100: #162540 !important;
   --s-200: #1E3050 !important;
   --s-300: #2A4060 !important;
@@ -61,83 +66,279 @@ html {
   --s-700: #80A0C0 !important;
   --s-800: #A0C0E0 !important;
   --s-900: #C0E0FF !important;
+
+  /* Slate dark override (Tailwind) */
+  --tw-bg-slate-900: #070D1A !important;
+  --tw-bg-slate-800: #0A1628 !important;
+  --tw-bg-slate-700: #0F1E36 !important;
 }
 
-/* ============================================================
-   BACKGROUNDS GLOBAIS
-   ============================================================ */
+/* ================================================================
+   FUNDO GLOBAL — bg-base com textura HUD obrigatória
+   ================================================================ */
+html,
 body,
-.app-wrapper,
-.main-nav,
-.sidebar,
-.sidebar-wrap,
-.left-wrap,
-.view-box,
-.conversation-page,
-.contact-page,
-.settings-layout,
-.reports-overview,
-.notifications-list-wrap {
-  background-color: #0D0D0D !important;
+#app,
+.app-wrapper {
+  background-color: #070D1A !important;
+  background-image:
+    linear-gradient(rgba(181,255,44,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181,255,44,0.022) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
   color: #FFFFFF !important;
 }
 
-/* Superfícies / cards */
-.conversation-card,
-.contact-card,
-.metric-card,
-.report-card,
-.card,
-.inbox-card,
-[class*="card"],
-[class*="surface"],
-.modal-container,
-.dropdown-pane {
-  background-color: #0A1628 !important;
-  border-color: #1A2A3A !important;
+/* ================================================================
+   ONBOARDING / LOGIN — PÁGINA SUPER ADMIN (Rails view)
+   ================================================================ */
+
+/* Fundo da tela de login */
+.bg-woot-25,
+main.bg-woot-25,
+main[class*="bg-woot"] {
+  background-color: #070D1A !important;
+  background-image:
+    linear-gradient(rgba(181,255,44,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181,255,44,0.022) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
 }
 
-/* ============================================================
-   ACCENT — BOTÕES E DESTAQUES
-   ============================================================ */
+/* Card do formulário */
+.bg-white.shadow,
+section.bg-white {
+  background-color: #0A1628 !important;
+  border: 1px solid #1A2A3A !important;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6) !important;
+}
+
+/* Título h2 da tela de login */
+h2.text-3xl,
+h2[class*="text-slate"],
+h2[class*="dark:text-woot"] {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2.5rem !important;
+  letter-spacing: 0.08em !important;
+  color: #FFFFFF !important;
+}
+
+/* Labels dos campos */
+label[class*="text-slate"],
+label[class*="text-sm"] {
+  color: #CCCCCC !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+input.block,
+textarea {
+  background-color: #0F1E36 !important;
+  border: 1px solid #1A2A3A !important;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="text"]::placeholder,
+input.block::placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-color: #B5FF2C !important;
+  box-shadow: 0 0 0 2px rgba(181,255,44,0.15) !important;
+  outline: none !important;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  accent-color: #B5FF2C !important;
+}
+
+/* Botão primário (Finish Setup, Login) */
+button[type="submit"],
+button.bg-woot-500,
+button[class*="bg-woot"],
 .button.nice,
-.button[data-original-title],
-button[class*="primary"],
 .woot-button,
-[class*="btn-primary"],
-.active-tab,
-.badge--primary {
+button[class*="primary"] {
   background-color: #B5FF2C !important;
   color: #000000 !important;
   border-color: #B5FF2C !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
 }
 
-.button.nice:hover,
-button[class*="primary"]:hover {
+button[type="submit"]:hover,
+button.bg-woot-500:hover,
+button[class*="bg-woot"]:hover {
   background-color: #9EE020 !important;
 }
 
-/* Links e highlights */
-a,
-.text-woot-500,
-[class*="text-woot"],
-.active .title,
-.active .label,
-.conversation-item.active .conversation-header {
-  color: #B5FF2C !important;
+/* Texto sobre botão verde: sempre preto */
+button[type="submit"] *,
+button.bg-woot-500 *,
+button[class*="bg-woot"] * {
+  color: #000000 !important;
 }
 
-/* Sidebar item ativo */
+/* ================================================================
+   ONBOARDING — PÁGINA /installation/onboarding (Vue)
+   ================================================================ */
+
+/* Container raiz Vue */
+.wizard-body,
+.wizard-wrap,
+.onboarding-wrapper,
+[class*="onboarding"],
+.flex.min-h-screen,
+.flex.flex-col.min-h-screen {
+  background-color: #070D1A !important;
+  background-image:
+    linear-gradient(rgba(181,255,44,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181,255,44,0.022) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+}
+
+/* Card central do onboarding */
+.onboarding-wrapper .card,
+[class*="onboarding"] .card,
+.wizard-body .card {
+  background-color: #0A1628 !important;
+  border: 1px solid #1A2A3A !important;
+}
+
+/* Heading do onboarding */
+[class*="onboarding"] h1,
+[class*="onboarding"] h2,
+[class*="wizard"] h1,
+[class*="wizard"] h2 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ================================================================
+   SIDEBAR PRINCIPAL
+   ================================================================ */
+.sidebar,
+.sidebar-wrap,
+.main-nav,
+.left-wrap,
+aside,
+nav[class*="sidebar"],
+[class*="primary-nav"] {
+  background-color: #070D1A !important;
+  border-right: 1px solid #1A2A3A !important;
+}
+
+/* Item ativo na sidebar */
 .sidebar-item.active,
+a[class*="active"][class*="sidebar"],
 .sidebar-button.active,
-[class*="sidebar"][class*="active"] {
-  background-color: rgba(181, 255, 44, 0.1) !important;
+[class*="nav-item"][class*="active"] {
+  background-color: rgba(181,255,44,0.08) !important;
   border-left: 3px solid #B5FF2C !important;
 }
 
-/* ============================================================
-   TIPOGRAFIA — BEBAS NEUE EM HEADINGS
-   ============================================================ */
+/* Ícones ativos */
+.sidebar-item.active svg,
+[class*="nav-item"][class*="active"] svg {
+  color: #B5FF2C !important;
+  stroke: #B5FF2C !important;
+}
+
+/* ================================================================
+   TOPBAR / HEADER
+   ================================================================ */
+.navbar,
+.top-navigation,
+header,
+[class*="topbar"],
+[class*="top-bar"],
+[class*="nav-bar"] {
+  background-color: #070D1A !important;
+  border-bottom: 1px solid #1A2A3A !important;
+}
+
+/* ================================================================
+   ÁREA PRINCIPAL / CONVERSATION VIEW
+   ================================================================ */
+.view-box,
+.conversation-page,
+.conversation-wrap,
+.contact-page,
+.settings-layout,
+.reports-overview,
+.notifications-list-wrap,
+main,
+.content-box {
+  background-color: #070D1A !important;
+  color: #FFFFFF !important;
+}
+
+/* Painel de lista de conversas */
+.conversations-list-wrap,
+.conversations-list,
+[class*="conversations-list"] {
+  background-color: #0A1628 !important;
+  border-right: 1px solid #1A2A3A !important;
+}
+
+/* Item de conversa */
+.conversation-item,
+[class*="conversation-item"] {
+  background-color: transparent !important;
+  border-bottom: 1px solid #0F1E36 !important;
+}
+
+.conversation-item:hover,
+[class*="conversation-item"]:hover {
+  background-color: rgba(181,255,44,0.04) !important;
+}
+
+.conversation-item.active,
+[class*="conversation-item"][class*="active"] {
+  background-color: rgba(181,255,44,0.08) !important;
+  border-left: 3px solid #B5FF2C !important;
+}
+
+/* Painel da conversa aberta */
+.view-box .conversation-view,
+.conversation-panel,
+[class*="conversation-view"] {
+  background-color: #070D1A !important;
+}
+
+/* ================================================================
+   CARDS E SUPERFÍCIES
+   ================================================================ */
+.card,
+.inbox-card,
+.contact-card,
+.metric-card,
+.report-card,
+[class*="card"],
+[class*="surface"],
+.modal-container,
+.dropdown-pane,
+.dropdown-container {
+  background-color: #0A1628 !important;
+  border-color: #1A2A3A !important;
+  color: #FFFFFF !important;
+}
+
+/* ================================================================
+   TIPOGRAFIA
+   ================================================================ */
 h1, h2, h3, h4,
 .title,
 .page-title,
@@ -150,44 +351,74 @@ h1, h2, h3, h4,
 .report-overview--title {
   font-family: 'Bebas Neue', sans-serif !important;
   letter-spacing: 0.05em !important;
+  color: #FFFFFF !important;
 }
 
-/* ============================================================
-   INPUTS E FORMULÁRIOS
-   ============================================================ */
-input, textarea, select,
+p, span, div, li, td, th {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+}
+
+/* ================================================================
+   INPUTS E FORMULÁRIOS (app Vue)
+   ================================================================ */
 .input-group input,
-.multiselect__tags {
-  background-color: #0A1628 !important;
+.multiselect__tags,
+.multiselect__input {
+  background-color: #0F1E36 !important;
   border-color: #1A2A3A !important;
   color: #FFFFFF !important;
 }
 
-input:focus, textarea:focus {
-  border-color: #B5FF2C !important;
-  box-shadow: 0 0 0 2px rgba(181, 255, 44, 0.2) !important;
+.multiselect__option--highlight {
+  background-color: rgba(181,255,44,0.15) !important;
+  color: #FFFFFF !important;
 }
 
-/* ============================================================
-   NAVEGAÇÃO / TOPBAR
-   ============================================================ */
-.navbar,
-.top-navigation,
-[class*="topbar"],
-[class*="nav-bar"] {
-  background-color: #070D1A !important;
-  border-bottom: 1px solid #1A2A3A !important;
+.multiselect__option--selected {
+  background-color: rgba(181,255,44,0.2) !important;
+  color: #B5FF2C !important;
 }
 
-/* ============================================================
+/* ================================================================
+   BADGES E STATUS
+   ================================================================ */
+.badge--primary,
+.label--primary,
+[class*="badge"][class*="primary"] {
+  background-color: #B5FF2C !important;
+  color: #000000 !important;
+}
+
+/* Online indicator */
+.badge--online,
+.status-badge--online {
+  background-color: #B5FF2C !important;
+}
+
+/* ================================================================
+   LINKS E TEXTOS DE DESTAQUE
+   ================================================================ */
+a:not([class*="button"]):not(button),
+.text-woot-500,
+[class*="text-woot"],
+.active .title,
+.active .label {
+  color: #B5FF2C !important;
+}
+
+a:not([class*="button"]):hover {
+  color: #9EE020 !important;
+}
+
+/* ================================================================
    SCROLLBAR CUSTOMIZADA
-   ============================================================ */
+   ================================================================ */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D0D0D;
+  background: #070D1A;
 }
 ::-webkit-scrollbar-thumb {
   background: #1A2A3A;
@@ -196,3 +427,154 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #B5FF2C;
 }
+
+/* ================================================================
+   TAILWIND DARK OVERRIDES — classes slate-* usadas pelo Chatwoot
+   ================================================================ */
+
+/* dark:bg-slate-900 → bg-base */
+.dark .bg-slate-900,
+.dark\:bg-slate-900 {
+  background-color: #070D1A !important;
+}
+
+/* dark:bg-slate-800 → surface */
+.dark .bg-slate-800,
+.dark\:bg-slate-800 {
+  background-color: #0A1628 !important;
+}
+
+/* dark:bg-slate-700 → elevated */
+.dark .bg-slate-700,
+.dark\:bg-slate-700 {
+  background-color: #0F1E36 !important;
+}
+
+/* Ring/border no dark mode */
+.dark .ring-slate-600,
+.dark\:ring-slate-600 {
+  --tw-ring-color: #1A2A3A !important;
+}
+
+/* Texto branco no dark */
+.dark .text-slate-100,
+.dark .text-white,
+.dark\:text-slate-100,
+.dark\:text-white {
+  color: #FFFFFF !important;
+}
+
+/* Texto secundário */
+.dark .text-slate-400,
+.dark\:text-slate-400 {
+  color: rgba(255,255,255,0.45) !important;
+}
+
+/* Focus ring woot-500 */
+.dark .focus\:ring-woot-500:focus,
+.focus\:ring-woot-500:focus {
+  --tw-ring-color: rgba(181,255,44,0.4) !important;
+}
+
+/* ================================================================
+   TABELA E RELATÓRIOS
+   ================================================================ */
+table {
+  background-color: #0A1628 !important;
+}
+
+th {
+  background-color: #0F1E36 !important;
+  color: #CCCCCC !important;
+  border-color: #1A2A3A !important;
+}
+
+td {
+  border-color: #1A2A3A !important;
+  color: #FFFFFF !important;
+}
+
+tr:hover td {
+  background-color: rgba(181,255,44,0.03) !important;
+}
+
+/* ================================================================
+   MODAIS E OVERLAYS
+   ================================================================ */
+.modal-mask,
+[class*="modal-mask"] {
+  background-color: rgba(7,13,26,0.85) !important;
+}
+
+.modal-container,
+[class*="modal-container"] {
+  background-color: #0A1628 !important;
+  border: 1px solid #1A2A3A !important;
+}
+
+/* ================================================================
+   NOTIFICAÇÕES E TOASTS
+   ================================================================ */
+.flash-message,
+.toast,
+[class*="flash"],
+[class*="toast"] {
+  background-color: #0F1E36 !important;
+  border: 1px solid #1A2A3A !important;
+  color: #FFFFFF !important;
+}
+
+/* ================================================================
+   SELECTION
+   ================================================================ */
+::selection {
+  background-color: rgba(181,255,44,0.25) !important;
+  color: #FFFFFF !important;
+}
+
+/* ================================================================
+   OVERRIDE TEXTOS HARDCODED DO JS COMPILADO
+   Estratégia: ocultar texto original com font-size 0 + color transparent
+   e injetar via ::after com o texto correto
+   ================================================================ */
+
+/* Título "HOWDY, WELCOME TO CHATWOOT 👋" na tela de onboarding */
+.wizard-body h1,
+[class*="onboarding"] h1,
+[class*="wizard"] h1 {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.wizard-body h1::after,
+[class*="onboarding"] h1::after,
+[class*="wizard"] h1::after {
+  content: 'BEM-VINDO À LAUNCHY';
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2.2rem !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.08em !important;
+  display: block !important;
+}
+
+/* "Get started with Chatwoot" → subtítulo */
+.wizard-body h2:first-of-type,
+[class*="onboarding"] h2:first-of-type {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.wizard-body h2:first-of-type::after,
+[class*="onboarding"] h2:first-of-type::after {
+  content: 'Configure sua central de atendimento';
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #CCCCCC !important;
+  display: block !important;
+}
+
+/* Botão "Finish Setup" — já sobrescrito pela regra de button[type="submit"] */
+
+/* Texto "Create an account" e "Register" */
+/* Esses vêm do signup.json que já atualizamos */
