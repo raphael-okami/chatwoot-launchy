@@ -1,0 +1,198 @@
+/* Launchy Design System — Theme Override para Chatwoot v4.14.0 */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* ============================================================
+   FORCE DARK MODE
+   ============================================================ */
+html, body {
+  color-scheme: dark !important;
+}
+
+/* ============================================================
+   TOKENS DO DS LAUNCHY
+   ============================================================ */
+:root,
+[data-theme="light"],
+[data-theme="dark"],
+.dark,
+html {
+  /* Backgrounds */
+  --color-bg: #0D0D0D !important;
+  --color-background: #0D0D0D !important;
+  --w-surface-1: #0D0D0D !important;
+  --w-surface-2: #0A1628 !important;
+  --w-surface-3: #070D1A !important;
+
+  /* Brand / Accent — #B5FF2C */
+  --color-woot-25:  #f0ffe0 !important;
+  --color-woot-50:  #e5ffb3 !important;
+  --color-woot-100: #d4ff80 !important;
+  --color-woot-200: #c9ff59 !important;
+  --color-woot-300: #c0ff40 !important;
+  --color-woot-400: #bbff33 !important;
+  --color-woot-500: #B5FF2C !important;
+  --color-woot-600: #9EE020 !important;
+  --color-woot-700: #85C018 !important;
+  --color-woot-800: #6A9A10 !important;
+  --color-woot-900: #4A6B00 !important;
+
+  /* Texto */
+  --color-heading: #FFFFFF !important;
+  --color-body: #FFFFFF !important;
+  --color-body-1: #FFFFFF !important;
+  --color-body-2: #CCCCCC !important;
+  --color-body-3: #999999 !important;
+
+  /* Borders */
+  --color-border: #1A2A3A !important;
+  --color-border-light: #0F1E2E !important;
+
+  /* Sidebar */
+  --s-25: #0D0D0D !important;
+  --s-50: #0A1628 !important;
+  --s-75: #0F1E30 !important;
+  --s-100: #162540 !important;
+  --s-200: #1E3050 !important;
+  --s-300: #2A4060 !important;
+  --s-400: #3A5270 !important;
+  --s-500: #4A6480 !important;
+  --s-600: #6080A0 !important;
+  --s-700: #80A0C0 !important;
+  --s-800: #A0C0E0 !important;
+  --s-900: #C0E0FF !important;
+}
+
+/* ============================================================
+   BACKGROUNDS GLOBAIS
+   ============================================================ */
+body,
+.app-wrapper,
+.main-nav,
+.sidebar,
+.sidebar-wrap,
+.left-wrap,
+.view-box,
+.conversation-page,
+.contact-page,
+.settings-layout,
+.reports-overview,
+.notifications-list-wrap {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+}
+
+/* Superfícies / cards */
+.conversation-card,
+.contact-card,
+.metric-card,
+.report-card,
+.card,
+.inbox-card,
+[class*="card"],
+[class*="surface"],
+.modal-container,
+.dropdown-pane {
+  background-color: #0A1628 !important;
+  border-color: #1A2A3A !important;
+}
+
+/* ============================================================
+   ACCENT — BOTÕES E DESTAQUES
+   ============================================================ */
+.button.nice,
+.button[data-original-title],
+button[class*="primary"],
+.woot-button,
+[class*="btn-primary"],
+.active-tab,
+.badge--primary {
+  background-color: #B5FF2C !important;
+  color: #000000 !important;
+  border-color: #B5FF2C !important;
+}
+
+.button.nice:hover,
+button[class*="primary"]:hover {
+  background-color: #9EE020 !important;
+}
+
+/* Links e highlights */
+a,
+.text-woot-500,
+[class*="text-woot"],
+.active .title,
+.active .label,
+.conversation-item.active .conversation-header {
+  color: #B5FF2C !important;
+}
+
+/* Sidebar item ativo */
+.sidebar-item.active,
+.sidebar-button.active,
+[class*="sidebar"][class*="active"] {
+  background-color: rgba(181, 255, 44, 0.1) !important;
+  border-left: 3px solid #B5FF2C !important;
+}
+
+/* ============================================================
+   TIPOGRAFIA — BEBAS NEUE EM HEADINGS
+   ============================================================ */
+h1, h2, h3, h4,
+.title,
+.page-title,
+.sidebar-title,
+.view-title,
+.section-title,
+.conv-header--title,
+.contact-name,
+.conversation-header .title,
+.report-overview--title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ============================================================
+   INPUTS E FORMULÁRIOS
+   ============================================================ */
+input, textarea, select,
+.input-group input,
+.multiselect__tags {
+  background-color: #0A1628 !important;
+  border-color: #1A2A3A !important;
+  color: #FFFFFF !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #B5FF2C !important;
+  box-shadow: 0 0 0 2px rgba(181, 255, 44, 0.2) !important;
+}
+
+/* ============================================================
+   NAVEGAÇÃO / TOPBAR
+   ============================================================ */
+.navbar,
+.top-navigation,
+[class*="topbar"],
+[class*="nav-bar"] {
+  background-color: #070D1A !important;
+  border-bottom: 1px solid #1A2A3A !important;
+}
+
+/* ============================================================
+   SCROLLBAR CUSTOMIZADA
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2A3A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B5FF2C;
+}
